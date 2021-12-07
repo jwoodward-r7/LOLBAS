@@ -1,0 +1,32 @@
+---
+Name: conhost.exe
+Description: The Microsoft Windows console host process. Can be used as a one to one replacement of cmd.exe.
+Author: Jonathan Woodward
+Created: 2021-12-07
+Commands:
+  - Command: conhost.exe calc.exe
+    Description: Executes calc.exe from conhost.exe
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10 18363 or later
+  - Command: conhost.exe /c whoami
+    Description: Executes the command "whoami". 
+    Usecase: This technique can be used to execute any cmd.exe command
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10 18363 or later
+Full_Path:
+  - Path: C:\Windows\System32\conhost.exe
+Code_Sample:
+  - Code: 
+Detection:
+  - IOC: conhost.exe with cmd.exe arguments
+  - IOC: conhost.exe spawns process
+Resources:
+  - Link: https://www.hexacorn.com/blog/2020/05/25/how-to-con-your-host/
+Acknowledgement:
+  - Person: Adam
+    Handle: '@hexacorn'
