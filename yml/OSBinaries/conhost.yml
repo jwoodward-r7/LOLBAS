@@ -1,7 +1,7 @@
 ---
 Name: conhost.exe
 Description: The Microsoft Windows console host process. Can be used as a one to one replacement of cmd.exe.
-Author: Jonathan Woodward
+Author: 'Jonathan Woodward'
 Created: 2021-12-07
 Commands:
   - Command: conhost.exe calc.exe
